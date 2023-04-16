@@ -50,6 +50,8 @@ namespace FlowerShop
             set 
             {
                 if (value == null) throw new ArgumentNullException("value is null");
+                flowers.Clear();
+                index = -1;
                 foreach(Flower f in value.Values)
                 {
                     if (f != null)

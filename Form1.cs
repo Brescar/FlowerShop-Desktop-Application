@@ -15,6 +15,14 @@ namespace FlowerShop
         public FormFlowerShop()
         {
             InitializeComponent();
+
+            Dictionary<int, Flower> flowers = new Dictionary<int, Flower>();
+            //aici am ramas
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

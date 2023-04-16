@@ -11,12 +11,14 @@ namespace FlowerShop
         private string name;
         private string color;
         private double price;
+        private int quantity;
 
-        public Flower(string name, string color, double price)
+        public Flower(string name, string color, double price, int quantity)
         {
             this.name = name;
             this.color = color;
             this.price = price;
+            this.quantity = quantity;
         }
 
         public string Name
@@ -34,6 +36,11 @@ namespace FlowerShop
         {
             get { return price; }
             set { price = value; }
+        }
+        public int Quantity
+        {
+            get { return quantity; }
+            set { quantity = value; }
         }
 
         public object Clone()
