@@ -12,9 +12,19 @@ namespace FlowerShop
 {
     public partial class FormFlower : Form
     {
-        public FormFlower()
+        public Flower flower;
+        public FormFlower(Flower f)
         {
             InitializeComponent();
+
+            if (f == null)
+            {
+                flower = new Flower();
+            }
+            else
+            {
+                //to add what we do in case of editing a flower product
+            }
         }
     }
 }

@@ -12,17 +12,21 @@ namespace FlowerShop
 {
     public partial class FormFlowerShop : Form
     {
+        private Dictionary<int, Flower> flowers = new Dictionary<int, Flower>();
         public FormFlowerShop()
         {
             InitializeComponent();
 
-            Dictionary<int, Flower> flowers = new Dictionary<int, Flower>();
-            //aici am ramas
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormFlower form = new FormFlower(null);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                ListViewItem listViewItem = new ListViewItem(form.flower.Name);
+                //aici am ramas
+            }
         }
     }
 }

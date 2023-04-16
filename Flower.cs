@@ -13,6 +13,8 @@ namespace FlowerShop
         private double price;
         private int quantity;
 
+        public Flower() { }
+
         public Flower(string name, string color, double price, int quantity)
         {
             this.name = name;
