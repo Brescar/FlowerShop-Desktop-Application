@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FlowerShop
 {
-    public partial class FormFlowerShop : Form
+    public partial class FormFlower : Form
     {
-        public FormFlowerShop()
+        public FormFlower()
         {
             InitializeComponent();
         }

@@ -25,7 +25,7 @@ namespace FlowerShop
         }
         public Stocks(Dictionary<int, Flower> flowers)
         {
-            if (flowers == null) { throw new ArgumentNullException("Dictionaty of flowers is null"); }
+            if (flowers == null) { throw new ArgumentNullException("Dictionary of flowers is null"); }
             foreach (Flower f in flowers.Values)
             {
                 if (f != null)
