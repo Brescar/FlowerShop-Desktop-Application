@@ -26,5 +26,13 @@ namespace FlowerShop
                 //to add what we do in case of editing a flower product
             }
         }
+
+        private void buttonFlowerAdd_Click(object sender, EventArgs e)
+        {
+            flower.Name = textBoxFlowerName.Text;
+            flower.Color = textBoxFlowerColor.Text;
+            flower.Price = double.Parse(textBoxFlowerPrice.Text);
+            flower.Quantity = int.Parse(textBoxFlowerStock.Text);
+        }
     }
 }

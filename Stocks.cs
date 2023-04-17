@@ -62,6 +62,16 @@ namespace FlowerShop
                 }
             }
         }
+        public int getKey(Flower f)
+        {
+            foreach(var value in flowers)
+            {
+                if (value.Value.Name == f.Name && value.Value.Color == f.Color && value.Value.Price == f.Price) 
+                    return value.Key;
+            }
+
+        return -1;
+        }
 
     }
 }

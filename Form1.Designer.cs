@@ -37,8 +37,8 @@
             this.deliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.listViewProducts = new System.Windows.Forms.ListView();
-            this.columnHeaderProductsID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFlowerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderProductsColor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFlowerPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFlowerStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewOrders = new System.Windows.Forms.ListView();
@@ -63,7 +63,7 @@
             this.toolStripStatusLabelNrOfOrders = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelTextDelivery = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelDelivery = new System.Windows.Forms.ToolStripStatusLabel();
-            this.columnHeaderProductsColor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStripProducts.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +91,8 @@
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem});
+            this.addToolStripMenuItem,
+            this.editToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
             this.productsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.productsToolStripMenuItem.Text = "Products";
@@ -124,7 +125,6 @@
             // listViewProducts
             // 
             this.listViewProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderProductsID,
             this.columnHeaderFlowerName,
             this.columnHeaderProductsColor,
             this.columnHeaderFlowerPrice,
@@ -132,20 +132,19 @@
             this.listViewProducts.HideSelection = false;
             this.listViewProducts.Location = new System.Drawing.Point(699, 88);
             this.listViewProducts.Name = "listViewProducts";
-            this.listViewProducts.Size = new System.Drawing.Size(453, 544);
+            this.listViewProducts.Size = new System.Drawing.Size(401, 544);
             this.listViewProducts.TabIndex = 2;
             this.listViewProducts.UseCompatibleStateImageBehavior = false;
             this.listViewProducts.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeaderProductsID
-            // 
-            this.columnHeaderProductsID.Text = "ID";
-            this.columnHeaderProductsID.Width = 40;
             // 
             // columnHeaderFlowerName
             // 
             this.columnHeaderFlowerName.Text = "Name";
             this.columnHeaderFlowerName.Width = 120;
+            // 
+            // columnHeaderProductsColor
+            // 
+            this.columnHeaderProductsColor.Text = "Color";
             // 
             // columnHeaderFlowerPrice
             // 
@@ -315,9 +314,12 @@
             this.toolStripStatusLabelDelivery.Size = new System.Drawing.Size(107, 20);
             this.toolStripStatusLabelDelivery.Text = "nr of deliveries";
             // 
-            // columnHeaderProductsColor
+            // editToolStripMenuItem
             // 
-            this.columnHeaderProductsColor.Text = "Color";
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // FormFlowerShop
             // 
@@ -362,7 +364,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelNrOfOrders;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelTextDelivery;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDelivery;
-        private System.Windows.Forms.ColumnHeader columnHeaderProductsID;
         private System.Windows.Forms.ColumnHeader columnHeaderFlowerName;
         private System.Windows.Forms.ColumnHeader columnHeaderFlowerPrice;
         private System.Windows.Forms.ColumnHeader columnHeaderFlowerStock;
@@ -382,6 +383,7 @@
         private System.Windows.Forms.ColumnHeader columnHeaderOrdersDetails;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeaderProductsColor;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
     }
 }
 

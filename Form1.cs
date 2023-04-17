@@ -12,7 +12,7 @@ namespace FlowerShop
 {
     public partial class FormFlowerShop : Form
     {
-        private Dictionary<int, Flower> flowers = new Dictionary<int, Flower>();
+        private Stocks products = new Stocks();
         public FormFlowerShop()
         {
             InitializeComponent();
@@ -24,9 +24,38 @@ namespace FlowerShop
             FormFlower form = new FormFlower(null);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                ListViewItem listViewItem = new ListViewItem(form.flower.Name);
-                //aici am ramas
+                ListViewItem item = new ListViewItem(form.flower.Name);
+                item.SubItems.Add(form.flower.Color);
+                item.SubItems.Add(form.flower.Price.ToString());
+                item.SubItems.Add(form.flower.Quantity.ToString());
+
+                item.Tag = form.flower;
+
+                listViewProducts.Items.Add(item);
             }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //to edit below
+
+            //Flower flower = listViewProducts.SelectedItems[0];
+            
+            //int key = products.getKey(form.flower);
+
+            //ListViewItem item = new ListViewItem(products.Flowers[key].Name);
+            //string color = products.Flowers[key].Color;
+            //item.SubItems.Add(color);
+            //item.SubItems.Add(products.Flowers[key].Price.ToString());
+            //item.SubItems.Add(products.Flowers[key].Quantity.ToString());
+
+            //item.Tag = form.flower;
+
+            //listViewProducts.Items.Add(item);
+
+            //products.addFlower(form.flower);
+
+            //to edit above
         }
     }
 }
