@@ -92,6 +92,7 @@
             this.textBoxFlowerColor.Size = new System.Drawing.Size(234, 22);
             this.textBoxFlowerColor.TabIndex = 1;
             this.textBoxFlowerColor.Text = "Color";
+            this.textBoxFlowerColor.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxFlowerColor_Validating);
             // 
             // textBoxFlowerPrice
             // 
@@ -100,6 +101,7 @@
             this.textBoxFlowerPrice.Size = new System.Drawing.Size(234, 22);
             this.textBoxFlowerPrice.TabIndex = 2;
             this.textBoxFlowerPrice.Text = "0";
+            this.textBoxFlowerPrice.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxFlowerPrice_Validating);
             // 
             // textBoxFlowerStock
             // 
@@ -108,6 +110,7 @@
             this.textBoxFlowerStock.Size = new System.Drawing.Size(234, 22);
             this.textBoxFlowerStock.TabIndex = 3;
             this.textBoxFlowerStock.Text = "0";
+            this.textBoxFlowerStock.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxFlowerStock_Validating);
             // 
             // buttonFlowerAdd
             // 

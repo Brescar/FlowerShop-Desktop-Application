@@ -19,11 +19,13 @@ namespace FlowerShop
             Application.Run(new FormFlowerShop());
 
             /*THINGS THAT NEED ADDING / MODIFYING
-             * 1) To add verifying and verified to the button for adding a flower
-             * 2) To add the condition where adding or editing a product where 2 instances
+             * 1) To add the condition where adding or editing a product where 2 instances
              * of the same item appear, somehow the stock is combined into only one item
-             * 3) to add implementation for menu strip products edit
-             * 4) to add implementation of the statusStrip
+             * 2) to add implementation of the statusStrip
+             * 3) to add a way when pressing edit the buttonfFlowerAdd has "EDIT" written as text instead of add;
+             * 4) to add contextStrip
+             * 5) to add a way of enabling and disabling buttons based on what sense does it make
+             * in the context (ex: edit is desabled when no item is selected)
              */
         }
     }
