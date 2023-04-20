@@ -83,6 +83,7 @@
             this.textBoxFlowerName.Size = new System.Drawing.Size(234, 22);
             this.textBoxFlowerName.TabIndex = 0;
             this.textBoxFlowerName.Text = "Name";
+            this.textBoxFlowerName.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxFlowerName_Validating);
             // 
             // textBoxFlowerColor
             // 

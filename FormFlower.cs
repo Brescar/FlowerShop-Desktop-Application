@@ -12,6 +12,7 @@ namespace FlowerShop
 {
     public partial class FormFlower : Form
     {
+        private ErrorProvider errorProvider = new ErrorProvider();
         public Flower flower;
         public FormFlower(Flower f)
         {
@@ -23,7 +24,12 @@ namespace FlowerShop
             }
             else
             {
-                //to add what we do in case of editing a flower product
+                flower = f;
+
+                textBoxFlowerName.Text = flower.Name;
+                textBoxFlowerColor.Text = flower.Color;
+                textBoxFlowerPrice.Text = flower.Price.ToString();
+                textBoxFlowerStock.Text = flower.Quantity.ToString();
             }
         }
 
@@ -34,5 +40,23 @@ namespace FlowerShop
             flower.Price = double.Parse(textBoxFlowerPrice.Text);
             flower.Quantity = int.Parse(textBoxFlowerStock.Text);
         }
+
+        private void textBoxFlowerName_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxFlowerName.Text.Length < 3)
+            {
+                errorProvider.SetError(textBoxFlowerName,
+                    "Name must be at least 3 characters long");
+                if (ActiveControl != buttonFlowerCancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                errorProvider.SetError(textBoxFlowerName, "");
+            }
+        }
+
     }
 }

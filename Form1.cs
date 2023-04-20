@@ -37,6 +37,21 @@ namespace FlowerShop
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (listViewProducts.SelectedItems.Count > 0)
+            {
+                Flower f = listViewProducts.SelectedItems[0].Tag as Flower;
+                FormFlower form = new FormFlower(f);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    ListViewItem item = listViewProducts.SelectedItems[0];
+                    item.Text = form.flower.Name;
+                    item.SubItems[1].Text = form.flower.Color;
+                    item.SubItems[2].Text = form.flower.Price.ToString();
+                    item.SubItems[3].Text = form.flower.Quantity.ToString();
+
+                    
+                }
+            }
             //to edit below
 
             //Flower flower = listViewProducts.SelectedItems[0];
