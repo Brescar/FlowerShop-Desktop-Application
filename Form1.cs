@@ -16,6 +16,7 @@ namespace FlowerShop
         public FormFlowerShop()
         {
             InitializeComponent();
+            editToolStripMenuItem.Enabled = false;
 
         }
 
@@ -52,25 +53,23 @@ namespace FlowerShop
                     
                 }
             }
-            //to edit below
+        }
 
-            //Flower flower = listViewProducts.SelectedItems[0];
+        private void listViewOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
             
-            //int key = products.getKey(form.flower);
+        }
 
-            //ListViewItem item = new ListViewItem(products.Flowers[key].Name);
-            //string color = products.Flowers[key].Color;
-            //item.SubItems.Add(color);
-            //item.SubItems.Add(products.Flowers[key].Price.ToString());
-            //item.SubItems.Add(products.Flowers[key].Quantity.ToString());
-
-            //item.Tag = form.flower;
-
-            //listViewProducts.Items.Add(item);
-
-            //products.addFlower(form.flower);
-
-            //to edit above
+        private void listViewProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewProducts.SelectedItems.Count > 0)
+            {
+                editToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                editToolStripMenuItem.Enabled = false;
+            }
         }
     }
 }

@@ -117,9 +117,9 @@
             this.buttonFlowerAdd.BackColor = System.Drawing.Color.Lime;
             this.buttonFlowerAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonFlowerAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFlowerAdd.Location = new System.Drawing.Point(303, 341);
+            this.buttonFlowerAdd.Location = new System.Drawing.Point(303, 343);
             this.buttonFlowerAdd.Name = "buttonFlowerAdd";
-            this.buttonFlowerAdd.Size = new System.Drawing.Size(91, 68);
+            this.buttonFlowerAdd.Size = new System.Drawing.Size(111, 68);
             this.buttonFlowerAdd.TabIndex = 4;
             this.buttonFlowerAdd.Text = "ADD";
             this.buttonFlowerAdd.UseVisualStyleBackColor = false;
@@ -130,9 +130,9 @@
             this.buttonFlowerCancel.BackColor = System.Drawing.Color.Red;
             this.buttonFlowerCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonFlowerCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFlowerCancel.Location = new System.Drawing.Point(446, 341);
+            this.buttonFlowerCancel.Location = new System.Drawing.Point(426, 343);
             this.buttonFlowerCancel.Name = "buttonFlowerCancel";
-            this.buttonFlowerCancel.Size = new System.Drawing.Size(91, 68);
+            this.buttonFlowerCancel.Size = new System.Drawing.Size(111, 68);
             this.buttonFlowerCancel.TabIndex = 5;
             this.buttonFlowerCancel.Text = "CANCEL";
             this.buttonFlowerCancel.UseVisualStyleBackColor = false;

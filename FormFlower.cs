@@ -21,10 +21,12 @@ namespace FlowerShop
 
             if (f == null)
             {
+                buttonFlowerAdd.Text = "ADD";
                 flower = new Flower();
             }
             else
             {
+                buttonFlowerAdd.Text = "EDIT";
                 flower = f;
 
                 textBoxFlowerName.Text = flower.Name;
