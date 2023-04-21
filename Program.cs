@@ -22,7 +22,6 @@ namespace FlowerShop
              * 1) To add the condition where adding or editing a product where 2 instances
              * of the same item appear, somehow the stock is combined into only one item
              * 2) to add implementation of the statusStrip     
-             * 3) to add contextStrip
              */
         }
     }

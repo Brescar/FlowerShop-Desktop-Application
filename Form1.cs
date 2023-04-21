@@ -71,5 +71,17 @@ namespace FlowerShop
                 editToolStripMenuItem.Enabled = false;
             }
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (listViewProducts.SelectedItems.Count == 0)
+            {
+                editProductToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                editProductToolStripMenuItem.Enabled = true;
+            }
+        }
     }
 }
