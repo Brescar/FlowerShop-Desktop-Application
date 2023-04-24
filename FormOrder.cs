@@ -12,7 +12,7 @@ namespace FlowerShop
 {
     public partial class FormOrder : Form
     {
-        private ErrorProvider errorProvider;
+        private ErrorProvider errorProvider = new ErrorProvider();
         public Order order;
         public FormOrder(Order o)
         {
@@ -35,6 +35,7 @@ namespace FlowerShop
                 textBoxOrderDetails.Text = o.Details;
             }
             dateTimePickerOrder.MaxDate = DateTime.Now.AddDays(28);
+            dateTimePickerOrder.MinDate = DateTime.Now.AddDays(1);
         }
 
         private void buttonOrderAdd_Click(object sender, EventArgs e)
@@ -52,9 +53,9 @@ namespace FlowerShop
             DateTime currentDate = DateTime.Now;
 
             TimeSpan interval = dateTimePickerOrder.Value.Subtract(currentDate);
-            if (interval <= maxInterval && interval >= minInterval)
+            if (interval > maxInterval || interval < minInterval)
             {
-                errorProvider.SetError(dateTimePickerOrder, "Order cannot arrive later than 28 days from now");
+                errorProvider.SetError(dateTimePickerOrder, "Order cannot arrive today nor later than 28 days from now");
                 if (ActiveControl != buttonOrderCancel)
                 {
                     e.Cancel = true;
@@ -63,6 +64,7 @@ namespace FlowerShop
             else
             {
                 errorProvider.SetError(dateTimePickerOrder, "");
+                //e.Cancel = false;
             }
         }
 

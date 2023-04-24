@@ -27,8 +27,7 @@ namespace FlowerShop
              * to StockFlower;
              * 5) to adapt the code when addingor editing happens, entrys in StockName
              * needs to be updated accordingly
-             * 6) in veryfing for date, we need to make sure the dueDate is no more
-             * then 28 days over the date in present time of adding the order
+             * 6) to implement delete
              */
         }
     }

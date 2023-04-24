@@ -67,9 +67,14 @@
             this.toolStripStatusLabelTextDelivery = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelDelivery = new System.Windows.Forms.ToolStripStatusLabel();
             this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStripProducts.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -118,7 +123,8 @@
             // ordersToolStripMenuItem
             // 
             this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem1});
+            this.addToolStripMenuItem1,
+            this.editToolStripMenuItem1});
             this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
             this.ordersToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.ordersToolStripMenuItem.Text = "Orders";
@@ -197,6 +203,7 @@
             this.columnHeaderOrdersValue,
             this.columnHeaderOrdersSender,
             this.columnHeaderOrdersDetails});
+            this.listViewOrders.ContextMenuStrip = this.contextMenuStrip2;
             this.listViewOrders.HideSelection = false;
             this.listViewOrders.Location = new System.Drawing.Point(15, 88);
             this.listViewOrders.Name = "listViewOrders";
@@ -355,6 +362,37 @@
             this.addToolStripMenuItem1.Text = "Add";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addOrderToolStripMenuItem,
+            this.editOrderToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(149, 52);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            // 
+            // addOrderToolStripMenuItem
+            // 
+            this.addOrderToolStripMenuItem.Name = "addOrderToolStripMenuItem";
+            this.addOrderToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.addOrderToolStripMenuItem.Text = "Add Order";
+            this.addOrderToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            // 
+            // editOrderToolStripMenuItem
+            // 
+            this.editOrderToolStripMenuItem.Name = "editOrderToolStripMenuItem";
+            this.editOrderToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.editOrderToolStripMenuItem.Text = "Edit Order";
+            this.editOrderToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            // 
             // FormFlowerShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,6 +415,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.statusStripProducts.ResumeLayout(false);
             this.statusStripProducts.PerformLayout();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,6 +461,10 @@
         private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem addOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editOrderToolStripMenuItem;
     }
 }
 
