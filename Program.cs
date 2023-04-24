@@ -21,7 +21,14 @@ namespace FlowerShop
             /*THINGS THAT NEED ADDING / MODIFYING
              * 1) To add the condition where adding or editing a product where 2 instances
              * of the same item appear, somehow the stock is combined into only one item
-             * 2) to add implementation of the statusStrip     
+             * 2) to add implementation of the statusStrip 
+             * 3) started implementing forms and such for orders
+             * 4) to add implementation for StockOrder, StockDelivery and adapt Stock
+             * to StockFlower;
+             * 5) to adapt the code when addingor editing happens, entrys in StockName
+             * needs to be updated accordingly
+             * 6) in veryfing for date, we need to make sure the dueDate is no more
+             * then 28 days over the date in present time of adding the order
              */
         }
     }

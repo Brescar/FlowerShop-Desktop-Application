@@ -83,5 +83,10 @@ namespace FlowerShop
                 editProductToolStripMenuItem.Enabled = true;
             }
         }
+
+        private void addToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
