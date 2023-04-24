@@ -16,8 +16,12 @@ namespace FlowerShop
         public FormFlowerShop()
         {
             InitializeComponent();
+
             editToolStripMenuItem.Enabled = false;
+            deleteToolStripMenuItem.Enabled = false;
+
             editToolStripMenuItem1.Enabled = false;
+            deleteToolStripMenuItem1.Enabled = false;
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,10 +64,12 @@ namespace FlowerShop
             if (listViewOrders.SelectedItems.Count > 0)
             {
                 editToolStripMenuItem1.Enabled = true;
+                deleteToolStripMenuItem1.Enabled = true;
             }
             else
             {
                 editToolStripMenuItem1.Enabled = false;
+                deleteToolStripMenuItem1.Enabled = false;
             }
         }
 
@@ -72,10 +78,12 @@ namespace FlowerShop
             if (listViewProducts.SelectedItems.Count > 0)
             {
                 editToolStripMenuItem.Enabled = true;
+                deleteToolStripMenuItem.Enabled = true;
             }
             else
             {
                 editToolStripMenuItem.Enabled = false;
+                deleteToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -84,10 +92,12 @@ namespace FlowerShop
             if (listViewProducts.SelectedItems.Count == 0)
             {
                 editProductToolStripMenuItem.Enabled = false;
+                deleteProductToolStripMenuItem.Enabled = false;
             }
             else
             {
                 editProductToolStripMenuItem.Enabled = true;
+                deleteProductToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -131,10 +141,28 @@ namespace FlowerShop
             if (listViewOrders.SelectedItems.Count > 0)
             {
                 editOrderToolStripMenuItem.Enabled = true;
+                deleteOrderToolStripMenuItem.Enabled = true;
             }
             else
             {
                 editOrderToolStripMenuItem.Enabled = false;
+                deleteOrderToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listViewProducts.SelectedItems.Count > 0)
+            {
+                listViewProducts.SelectedItems[0].Remove();
+            }
+        }
+
+        private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (listViewOrders.SelectedItems.Count > 0)
+            {
+                listViewOrders.SelectedItems[0].Remove();
             }
         }
     }
