@@ -55,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelivery.Designer.cs">
+      <DependentUpon>FormDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFlower.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Stocks.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelivery.resx">
+      <DependentUpon>FormDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFlower.resx">
       <DependentUpon>FormFlower.cs</DependentUpon>

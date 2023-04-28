@@ -30,6 +30,10 @@ namespace FlowerShop
              * 6) to implement clear (total delete) and restore (per item and per all items)
              * as in Undo
              * 7) to implement shortcuts
+             * 
+             * !!! ) immediate to do:  left to add for delivery : menustrip for delivery, 
+             * contextstrip for delivery, and implementations for buttons and veryfying 
+             * and code in form1
              */
         }
     }
