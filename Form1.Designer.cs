@@ -34,11 +34,16 @@
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewProducts = new System.Windows.Forms.ListView();
             this.columnHeaderFlowerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderProductsColor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,6 +55,10 @@
             this.columnHeaderOrdersValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderOrdersSender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderOrdersDetails = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewDelivery = new System.Windows.Forms.ListView();
             this.columnHeaderDeliveryDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderDeliveryDaysLeft = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,19 +75,18 @@
             this.toolStripStatusLabelNrOfOrders = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelTextDelivery = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelDelivery = new System.Windows.Forms.ToolStripStatusLabel();
-            this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.statusStripProducts.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
+            this.statusStripProducts.SuspendLayout();
+            this.contextMenuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -125,6 +133,13 @@
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // ordersToolStripMenuItem
             // 
             this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -135,8 +150,33 @@
             this.ordersToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.ordersToolStripMenuItem.Text = "Orders";
             // 
+            // addToolStripMenuItem1
+            // 
+            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.addToolStripMenuItem1.Text = "Add";
+            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            // 
+            // deleteToolStripMenuItem1
+            // 
+            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.deleteToolStripMenuItem1.Text = "Delete";
+            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
+            // 
             // deliveryToolStripMenuItem
             // 
+            this.deliveryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem2,
+            this.editToolStripMenuItem2,
+            this.deleteToolStripMenuItem2});
             this.deliveryToolStripMenuItem.Name = "deliveryToolStripMenuItem";
             this.deliveryToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.deliveryToolStripMenuItem.Text = "Delivery";
@@ -155,16 +195,23 @@
             // addProductToolStripMenuItem
             // 
             this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
-            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
+            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.addProductToolStripMenuItem.Text = "Add Product";
             this.addProductToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editProductToolStripMenuItem
             // 
             this.editProductToolStripMenuItem.Name = "editProductToolStripMenuItem";
-            this.editProductToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
+            this.editProductToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.editProductToolStripMenuItem.Text = "Edit Product";
             this.editProductToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteProductToolStripMenuItem
+            // 
+            this.deleteProductToolStripMenuItem.Name = "deleteProductToolStripMenuItem";
+            this.deleteProductToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
+            this.deleteProductToolStripMenuItem.Text = "Delete Product";
+            this.deleteProductToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // listViewProducts
             // 
@@ -244,6 +291,38 @@
             this.columnHeaderOrdersDetails.Text = "Details";
             this.columnHeaderOrdersDetails.Width = 120;
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addOrderToolStripMenuItem,
+            this.editOrderToolStripMenuItem,
+            this.deleteOrderToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(163, 76);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            // 
+            // addOrderToolStripMenuItem
+            // 
+            this.addOrderToolStripMenuItem.Name = "addOrderToolStripMenuItem";
+            this.addOrderToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.addOrderToolStripMenuItem.Text = "Add Order";
+            this.addOrderToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            // 
+            // editOrderToolStripMenuItem
+            // 
+            this.editOrderToolStripMenuItem.Name = "editOrderToolStripMenuItem";
+            this.editOrderToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.editOrderToolStripMenuItem.Text = "Edit Order";
+            this.editOrderToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            // 
+            // deleteOrderToolStripMenuItem
+            // 
+            this.deleteOrderToolStripMenuItem.Name = "deleteOrderToolStripMenuItem";
+            this.deleteOrderToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.deleteOrderToolStripMenuItem.Text = "Delete order";
+            this.deleteOrderToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
+            // 
             // listViewDelivery
             // 
             this.listViewDelivery.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -252,6 +331,7 @@
             this.columnHeaderDeliveryValue,
             this.columnHeaderRecipient,
             this.columnHeaderDeliveryDetails});
+            this.listViewDelivery.ContextMenuStrip = this.contextMenuStrip3;
             this.listViewDelivery.HideSelection = false;
             this.listViewDelivery.Location = new System.Drawing.Point(15, 397);
             this.listViewDelivery.Name = "listViewDelivery";
@@ -259,6 +339,7 @@
             this.listViewDelivery.TabIndex = 4;
             this.listViewDelivery.UseCompatibleStateImageBehavior = false;
             this.listViewDelivery.View = System.Windows.Forms.View.Details;
+            this.listViewDelivery.SelectedIndexChanged += new System.EventHandler(this.listViewDelivery_SelectedIndexChanged);
             // 
             // columnHeaderDeliveryDate
             // 
@@ -362,72 +443,58 @@
             this.toolStripStatusLabelDelivery.Size = new System.Drawing.Size(107, 20);
             this.toolStripStatusLabelDelivery.Text = "nr of deliveries";
             // 
-            // addToolStripMenuItem1
+            // addToolStripMenuItem2
             // 
-            this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.addToolStripMenuItem1.Text = "Add";
-            this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.addToolStripMenuItem2.Text = "Add";
+            this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
-            // editToolStripMenuItem1
+            // editToolStripMenuItem2
             // 
-            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.editToolStripMenuItem1.Text = "Edit";
-            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.editToolStripMenuItem2.Text = "Edit";
+            this.editToolStripMenuItem2.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
             // 
-            // contextMenuStrip2
+            // deleteToolStripMenuItem2
             // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addOrderToolStripMenuItem,
-            this.editOrderToolStripMenuItem,
-            this.deleteOrderToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 104);
-            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            this.deleteToolStripMenuItem2.Name = "deleteToolStripMenuItem2";
+            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.deleteToolStripMenuItem2.Text = "Delete";
+            this.deleteToolStripMenuItem2.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
-            // addOrderToolStripMenuItem
+            // contextMenuStrip3
             // 
-            this.addOrderToolStripMenuItem.Name = "addOrderToolStripMenuItem";
-            this.addOrderToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.addOrderToolStripMenuItem.Text = "Add Order";
-            this.addOrderToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
+            this.contextMenuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addDeliveryToolStripMenuItem,
+            this.editDeliveryToolStripMenuItem,
+            this.deleteDeliveryToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip3.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip3_Opening);
             // 
-            // editOrderToolStripMenuItem
+            // addDeliveryToolStripMenuItem
             // 
-            this.editOrderToolStripMenuItem.Name = "editOrderToolStripMenuItem";
-            this.editOrderToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.editOrderToolStripMenuItem.Text = "Edit Order";
-            this.editOrderToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            this.addDeliveryToolStripMenuItem.Name = "addDeliveryToolStripMenuItem";
+            this.addDeliveryToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.addDeliveryToolStripMenuItem.Text = "Add Delivery";
+            this.addDeliveryToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
-            // deleteToolStripMenuItem
+            // editDeliveryToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            this.editDeliveryToolStripMenuItem.Name = "editDeliveryToolStripMenuItem";
+            this.editDeliveryToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editDeliveryToolStripMenuItem.Text = "Edit Delivery";
+            this.editDeliveryToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
             // 
-            // deleteProductToolStripMenuItem
+            // deleteDeliveryToolStripMenuItem
             // 
-            this.deleteProductToolStripMenuItem.Name = "deleteProductToolStripMenuItem";
-            this.deleteProductToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.deleteProductToolStripMenuItem.Text = "Delete Product";
-            this.deleteProductToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // deleteOrderToolStripMenuItem
-            // 
-            this.deleteOrderToolStripMenuItem.Name = "deleteOrderToolStripMenuItem";
-            this.deleteOrderToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.deleteOrderToolStripMenuItem.Text = "Delete order";
-            this.deleteOrderToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
-            // 
-            // deleteToolStripMenuItem1
-            // 
-            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.deleteToolStripMenuItem1.Text = "Delete";
-            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
+            this.deleteDeliveryToolStripMenuItem.Name = "deleteDeliveryToolStripMenuItem";
+            this.deleteDeliveryToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteDeliveryToolStripMenuItem.Text = "Delete Delivery";
+            this.deleteDeliveryToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
             // FormFlowerShop
             // 
@@ -449,9 +516,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.statusStripProducts.ResumeLayout(false);
             this.statusStripProducts.PerformLayout();
-            this.contextMenuStrip2.ResumeLayout(false);
+            this.contextMenuStrip3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,6 +573,13 @@
         private System.Windows.Forms.ToolStripMenuItem deleteProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem deleteOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem addDeliveryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editDeliveryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteDeliveryToolStripMenuItem;
     }
 }
 

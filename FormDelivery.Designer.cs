@@ -63,6 +63,7 @@
             this.buttonDeliveryAdd.TabIndex = 18;
             this.buttonDeliveryAdd.Text = "ADD";
             this.buttonDeliveryAdd.UseVisualStyleBackColor = false;
+            this.buttonDeliveryAdd.Click += new System.EventHandler(this.buttonDeliveryAdd_Click);
             // 
             // label4
             // 
@@ -97,6 +98,7 @@
             this.textBoxDeliverySender.Size = new System.Drawing.Size(281, 22);
             this.textBoxDeliverySender.TabIndex = 14;
             this.textBoxDeliverySender.Text = "Name";
+            this.textBoxDeliverySender.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxDeliverySender_Validating);
             // 
             // label2
             // 
@@ -114,6 +116,7 @@
             this.textBoxDeliveryValue.Size = new System.Drawing.Size(281, 22);
             this.textBoxDeliveryValue.TabIndex = 12;
             this.textBoxDeliveryValue.Text = "0";
+            this.textBoxDeliveryValue.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxDeliveryValue_Validating);
             // 
             // label1
             // 
@@ -132,6 +135,7 @@
             this.dateTimePickerDelivery.Size = new System.Drawing.Size(281, 22);
             this.dateTimePickerDelivery.TabIndex = 10;
             this.dateTimePickerDelivery.Value = new System.DateTime(2023, 4, 24, 19, 30, 11, 0);
+            this.dateTimePickerDelivery.Validating += new System.ComponentModel.CancelEventHandler(this.dateTimePickerDelivery_Validating);
             // 
             // FormDelivery
             // 

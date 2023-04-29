@@ -16,12 +16,15 @@ namespace FlowerShop
         public FormFlowerShop()
         {
             InitializeComponent();
-
+            //for listViewProducts
             editToolStripMenuItem.Enabled = false;
             deleteToolStripMenuItem.Enabled = false;
-
+            //for listViewOrders
             editToolStripMenuItem1.Enabled = false;
             deleteToolStripMenuItem1.Enabled = false;
+            //for listViewDelivery
+            editToolStripMenuItem2.Enabled = false;
+            deleteToolStripMenuItem2.Enabled = false;
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,6 +166,76 @@ namespace FlowerShop
             if (listViewOrders.SelectedItems.Count > 0)
             {
                 listViewOrders.SelectedItems[0].Remove();
+            }
+        }
+
+        private void addToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormDelivery form = new FormDelivery(null);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                ListViewItem item = new ListViewItem(form.delivery.DeliveryDate.ToString());
+                item.SubItems.Add(form.delivery.DaysDue.ToString());
+                item.SubItems.Add(form.delivery.Value.ToString());
+                item.SubItems.Add(form.delivery.Recipient);
+                item.SubItems.Add(form.delivery.Details);
+
+                item.Tag = form.delivery;
+                listViewDelivery.Items.Add(item);
+            }
+        }
+
+        private void editToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (listViewDelivery.SelectedItems.Count > 0)
+            {
+                Delivery delivery = listViewDelivery.SelectedItems[0].Tag as Delivery;
+                FormDelivery form = new FormDelivery(delivery);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    ListViewItem item = listViewDelivery.SelectedItems[0];
+                    item.SubItems[0].Text = form.delivery.DeliveryDate.ToString();
+                    item.SubItems[1].Text = form.delivery.DaysDue.ToString();
+                    item.SubItems[2].Text = form.delivery.Value.ToString();
+                    item.SubItems[3].Text = form.delivery.Recipient;
+                    item.SubItems[4].Text = form.delivery.Details;
+                }
+            }
+        }
+
+        private void deleteToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (listViewDelivery.SelectedItems.Count > 0)
+            {
+                listViewDelivery.SelectedItems[0].Remove();
+            }
+        }
+
+        private void listViewDelivery_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewDelivery.SelectedItems.Count > 0)
+            {
+                editToolStripMenuItem2.Enabled = true;
+                deleteToolStripMenuItem2.Enabled = true;
+            }
+            else
+            {
+                editToolStripMenuItem2.Enabled = false;
+                deleteToolStripMenuItem2.Enabled = false;
+            }
+        }
+
+        private void contextMenuStrip3_Opening(object sender, CancelEventArgs e)
+        {
+            if (listViewDelivery.SelectedItems.Count > 0)
+            {
+                editDeliveryToolStripMenuItem.Enabled = true;
+                deleteDeliveryToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                editDeliveryToolStripMenuItem.Enabled = false;
+                deleteDeliveryToolStripMenuItem.Enabled = false;
             }
         }
     }
