@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlowerShop
 {
+    [Serializable]
     public class Delivery : ICloneable
     {
         private DateTime deliveryDate;

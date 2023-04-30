@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,7 +14,6 @@ namespace FlowerShop
 {
     public partial class FormFlowerShop : Form
     {
-        private Stocks products = new Stocks();
         public FormFlowerShop()
         {
             InitializeComponent();
@@ -236,6 +237,195 @@ namespace FlowerShop
             {
                 editDeliveryToolStripMenuItem.Enabled = false;
                 deleteDeliveryToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void productsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "Products files *.prd |*.prd";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Flower> listP = new List<Flower>();
+
+                foreach (ListViewItem item in listViewProducts.Items)
+                {
+                    listP.Add((Flower)item.Tag);
+                }
+
+                BinaryFormatter serializer = new BinaryFormatter();
+                Stream file = File.Create(fd.FileName);
+                try
+                {
+                    serializer.Serialize(file, listP);
+                    file.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void ordersToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "Orders files *.ord |*.ord";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Order> listO = new List<Order>();
+
+                foreach (ListViewItem item in listViewOrders.Items)
+                {
+                    listO.Add((Order)item.Tag);
+                }
+
+                BinaryFormatter serializer = new BinaryFormatter();
+                Stream file = File.Create(fd.FileName);
+                try
+                {
+                    serializer.Serialize(file, listO);
+                    file.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void deliveryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "Delivery files *.dlr |*.dlr";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Delivery> listD = new List<Delivery>();
+
+                foreach (ListViewItem item in listViewDelivery.Items)
+                {
+                    listD.Add((Delivery)item.Tag);
+                }
+
+                BinaryFormatter serializer = new BinaryFormatter();
+                Stream file = File.Create(fd.FileName);
+                try
+                {
+                    serializer.Serialize(file, listD);
+                    file.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void productsToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Products files *.prd |*.prd";
+            fd.CheckFileExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Flower> listP = new List<Flower>();
+
+                BinaryFormatter serializer = new BinaryFormatter();
+                try
+                {
+                    Stream fisier = File.OpenRead(fd.FileName);
+                    listP.AddRange((List<Flower>)serializer.Deserialize(fisier));
+                    fisier.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                foreach (Flower f in listP)
+                {
+                    ListViewItem item = new ListViewItem(
+                        new string[] { f.Name, f.Color, f.Price.ToString(), f.Quantity.ToString() });
+                    item.Tag = f;
+                    listViewProducts.Items.Add(item);
+                }
+            }
+        }
+
+        private void ordersToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Orders files *.ord |*.ord";
+            fd.CheckFileExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                
+                List<Order> listO = new List<Order>();
+            
+                BinaryFormatter serializer = new BinaryFormatter();
+                try
+                {
+                    Stream fisier = File.OpenRead(fd.FileName);
+                    listO.AddRange((List<Order>)serializer.Deserialize(fisier));
+                    fisier.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                foreach (Order o in listO)
+                {
+                    ListViewItem item = new ListViewItem(
+                        new string[] { o.OrderDate.ToString(), o.DaysDue.ToString(), o.Value.ToString(), o.Sender, o.Details });
+                    item.Tag = o;
+                    listViewOrders.Items.Add(item);
+                }
+            }
+        }
+
+        private void deliveryToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Delivery files *.dlr |*.dlr";
+            fd.CheckFileExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Delivery> listD = new List<Delivery>();
+
+                BinaryFormatter serializer = new BinaryFormatter();
+                try
+                {
+                    Stream fisier = File.OpenRead(fd.FileName);
+                    listD.AddRange((List<Delivery>)serializer.Deserialize(fisier));
+                    fisier.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                foreach (Delivery d in listD)
+                {
+                    ListViewItem item = new ListViewItem(
+                                               new string[] { d.DeliveryDate.ToString(), d.DaysDue.ToString(), d.Value.ToString(), d.Recipient, d.Details });
+                    item.Tag = d;
+                    listViewDelivery.Items.Add(item);
+                }
             }
         }
     }
