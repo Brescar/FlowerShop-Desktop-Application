@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace FlowerShop
 {
@@ -420,6 +422,190 @@ namespace FlowerShop
                 }
 
                 foreach (Delivery d in listD)
+                {
+                    ListViewItem item = new ListViewItem(
+                                               new string[] { d.DeliveryDate.ToString(), d.DaysDue.ToString(), d.Value.ToString(), d.Recipient, d.Details });
+                    item.Tag = d;
+                    listViewDelivery.Items.Add(item);
+                }
+            }
+        }
+
+        private void productsToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "Products files *.xml |*.xml";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Flower> list = new List<Flower>();
+                foreach (ListViewItem item in listViewProducts.Items)
+                {
+                    list.Add((Flower)item.Tag);
+                }
+
+                XmlSerializer serializer = new XmlSerializer
+                    (typeof(List<Flower>));
+
+                TextWriter writer = new StreamWriter(fd.FileName);
+
+                serializer.Serialize(writer, list);
+                writer.Close();
+            }
+        }
+
+        private void ordersToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "Orders files *.xml |*.xml";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Order> list = new List<Order>();
+                foreach (ListViewItem item in listViewOrders.Items)
+                {
+                    list.Add((Order)item.Tag);
+                }
+
+                XmlSerializer serializer = new XmlSerializer
+                    (typeof(List<Order>));
+
+                TextWriter writer = new StreamWriter(fd.FileName);
+
+                serializer.Serialize(writer, list);
+                writer.Close();
+            }
+        }
+
+        private void deliveryToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "Delivery files *.xml |*.xml";
+            fd.CheckPathExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Delivery> list = new List<Delivery>();
+                foreach (ListViewItem item in listViewDelivery.Items)
+                {
+                    list.Add((Delivery)item.Tag);
+                }
+
+                XmlSerializer serializer = new XmlSerializer
+                    (typeof(List<Delivery>));
+
+                TextWriter writer = new StreamWriter(fd.FileName);
+
+                serializer.Serialize(writer, list);
+                writer.Close();
+            }
+        }
+
+        private void productsToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Products files *.xml |*.xml";
+            fd.CheckFileExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Flower> list = new List<Flower>();
+
+                try
+                {
+                    XmlSerializer serializer = new XmlSerializer
+                    (typeof(List<Flower>));
+
+                    StreamReader reader = new StreamReader(fd.FileName);
+
+
+                    list.AddRange((List<Flower>)serializer.Deserialize(reader));
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+                foreach (Flower f in list)
+                {
+                    ListViewItem lv = new ListViewItem(
+                        new string[]
+                        { f.Name, f.Color, f.Price.ToString(), f.Quantity.ToString() });
+                    lv.Tag = f;
+                    listViewProducts.Items.Add(lv);
+
+                }
+            }
+        }
+
+        private void ordersToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Orders files *.xml |*.xml";
+            fd.CheckFileExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Order> list = new List<Order>();
+
+                try
+                {
+                    XmlSerializer serializer = new XmlSerializer
+                    (typeof(List<Order>));
+
+                    StreamReader reader = new StreamReader(fd.FileName);
+
+
+                    list.AddRange((List<Order>)serializer.Deserialize(reader));
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                foreach (Order o in list)
+                {
+                    ListViewItem item = new ListViewItem(
+                        new string[] { o.OrderDate.ToString(), o.DaysDue.ToString(), o.Value.ToString(), o.Sender, o.Details });
+                    item.Tag = o;
+                    listViewOrders.Items.Add(item);
+                }
+            }
+        }
+
+        private void deliveryToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Delivery files *.xml |*.xml";
+            fd.CheckFileExists = true;
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                List<Delivery> list = new List<Delivery>();
+
+                try
+                {
+                    XmlSerializer serializer = new XmlSerializer
+                    (typeof(List<Delivery>));
+
+                    StreamReader reader = new StreamReader(fd.FileName);
+
+
+                    list.AddRange((List<Delivery>)serializer.Deserialize(reader));
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+                foreach (Delivery d in list)
                 {
                     ListViewItem item = new ListViewItem(
                                                new string[] { d.DeliveryDate.ToString(), d.DaysDue.ToString(), d.Value.ToString(), d.Recipient, d.Details });

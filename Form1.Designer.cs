@@ -581,18 +581,21 @@
             this.productsToolStripMenuItem2.Name = "productsToolStripMenuItem2";
             this.productsToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.productsToolStripMenuItem2.Text = "Products";
+            this.productsToolStripMenuItem2.Click += new System.EventHandler(this.productsToolStripMenuItem2_Click);
             // 
             // ordersToolStripMenuItem2
             // 
             this.ordersToolStripMenuItem2.Name = "ordersToolStripMenuItem2";
             this.ordersToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.ordersToolStripMenuItem2.Text = "Orders";
+            this.ordersToolStripMenuItem2.Click += new System.EventHandler(this.ordersToolStripMenuItem2_Click);
             // 
             // deliveryToolStripMenuItem2
             // 
             this.deliveryToolStripMenuItem2.Name = "deliveryToolStripMenuItem2";
             this.deliveryToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.deliveryToolStripMenuItem2.Text = "Delivery";
+            this.deliveryToolStripMenuItem2.Click += new System.EventHandler(this.deliveryToolStripMenuItem2_Click);
             // 
             // openToolStripMenuItem
             // 
@@ -649,18 +652,21 @@
             this.productsToolStripMenuItem4.Name = "productsToolStripMenuItem4";
             this.productsToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
             this.productsToolStripMenuItem4.Text = "Products";
+            this.productsToolStripMenuItem4.Click += new System.EventHandler(this.productsToolStripMenuItem4_Click);
             // 
             // ordersToolStripMenuItem4
             // 
             this.ordersToolStripMenuItem4.Name = "ordersToolStripMenuItem4";
             this.ordersToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
             this.ordersToolStripMenuItem4.Text = "Orders";
+            this.ordersToolStripMenuItem4.Click += new System.EventHandler(this.ordersToolStripMenuItem4_Click);
             // 
             // deliveryToolStripMenuItem4
             // 
             this.deliveryToolStripMenuItem4.Name = "deliveryToolStripMenuItem4";
             this.deliveryToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
             this.deliveryToolStripMenuItem4.Text = "Delivery";
+            this.deliveryToolStripMenuItem4.Click += new System.EventHandler(this.deliveryToolStripMenuItem4_Click);
             // 
             // FormFlowerShop
             // 
