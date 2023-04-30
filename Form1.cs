@@ -19,6 +19,9 @@ namespace FlowerShop
         public FormFlowerShop()
         {
             InitializeComponent();
+
+            toolStripStatusLabelTextProducts.Text = "";
+
             //for listViewProducts
             editToolStripMenuItem.Enabled = false;
             deleteToolStripMenuItem.Enabled = false;
@@ -77,6 +80,7 @@ namespace FlowerShop
                 editToolStripMenuItem1.Enabled = false;
                 deleteToolStripMenuItem1.Enabled = false;
             }
+            toolStripStatusLabelTextProducts.Text = "";
         }
 
         private void listViewProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,11 +89,16 @@ namespace FlowerShop
             {
                 editToolStripMenuItem.Enabled = true;
                 deleteToolStripMenuItem.Enabled = true;
+
+                Flower f = listViewProducts.SelectedItems[0].Tag as Flower;
+                toolStripStatusLabelTextProducts.Text = "Product total stock value :  " + (f.Price * f.Quantity) + " $";
             }
             else
             {
                 editToolStripMenuItem.Enabled = false;
                 deleteToolStripMenuItem.Enabled = false;
+
+                toolStripStatusLabelTextProducts.Text = "";
             }
         }
 
@@ -226,6 +235,7 @@ namespace FlowerShop
                 editToolStripMenuItem2.Enabled = false;
                 deleteToolStripMenuItem2.Enabled = false;
             }
+            toolStripStatusLabelTextProducts.Text = "";
         }
 
         private void contextMenuStrip3_Opening(object sender, CancelEventArgs e)
