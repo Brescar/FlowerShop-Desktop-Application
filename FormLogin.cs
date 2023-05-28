@@ -16,5 +16,17 @@ namespace FlowerShop
         {
             InitializeComponent();
         }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (userControlLogin1.Autentification == true)
+            //{
+            //    MessageBox.Show("Connection succesfull", "Connected");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Incorrect credentials", "Error");
+            //}
+        }
     }
 }

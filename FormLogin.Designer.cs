@@ -48,6 +48,7 @@
             this.Controls.Add(this.userControlLogin1);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.ResumeLayout(false);
 
         }

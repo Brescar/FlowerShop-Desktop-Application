@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace FlowerShop
         bool autentification = false;
         string username = string.Empty;
         string password = string.Empty;
+        string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DB-FlowerShop;Integrated Security=True";
+
         public bool Autentification 
         {
             get { return autentification; }
@@ -36,13 +39,30 @@ namespace FlowerShop
         {
             username = textBoxUsername.Text;
             password = textBoxPassword.Text;
-            if (true) { //aici trebuie check in baza de date
-                autentification = true;
-            }
-            else
+
+            string query = "SELECT COUNT(*) FROM Accounts WHERE Username = @Username AND Password = @Password";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                MessageBox.Show("Incorrect credentials", "Error",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    connection.Close();
+
+                    if (count > 0)
+                    {
+                        autentification = true;
+                        buttonLogin.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        buttonLogin.DialogResult = DialogResult.Cancel;
+                    }
+                }
             }
         }
     }

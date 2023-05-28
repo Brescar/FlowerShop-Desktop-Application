@@ -71,7 +71,6 @@
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.Color.Lime;
-            this.buttonLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.Location = new System.Drawing.Point(460, 239);
             this.buttonLogin.Name = "buttonLogin";
