@@ -19,13 +19,10 @@ namespace FlowerShop
             Application.Run(new FormFlowerShop());
 
             /*THINGS THAT NEED ADDING / MODIFYING
-             * 1) To add the condition where adding or editing a product where 2 instances
-             * of the same item appear, somehow the stock is combined into only one item
-            *@ 2) !!!! to add implementation of the statusStrip 
-             * 3) to implement clear (total delete) and restore (per item and per all items)
-             * as in Undo
-             * 4) to implement clickColumn => sorting
-             * 
+             * 1) De implementat login pe form1
+             * 2) de verificat username-ul si parola in baza de date, daca e ok enable la controale, daca nu e ok eroare si
+             * incercare din nou
+             * 3) de modificat si verificat eroarea care trebuie sa apara la login incorect
              * 
              */
         }

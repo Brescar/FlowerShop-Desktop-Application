@@ -22,15 +22,12 @@ namespace FlowerShop
 
             toolStripStatusLabelTextProducts.Text = "";
 
-            //for listViewProducts
-            editToolStripMenuItem.Enabled = false;
-            deleteToolStripMenuItem.Enabled = false;
-            //for listViewOrders
-            editToolStripMenuItem1.Enabled = false;
-            deleteToolStripMenuItem1.Enabled = false;
-            //for listViewDelivery
-            editToolStripMenuItem2.Enabled = false;
-            deleteToolStripMenuItem2.Enabled = false;
+            foreach(Control control in Controls)
+            {
+                control.Enabled = false;
+            }
+
+            menuStrip2.Enabled = true;
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -622,6 +619,38 @@ namespace FlowerShop
                     item.Tag = d;
                     listViewDelivery.Items.Add(item);
                 }
+            }
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void enableControls()
+        {
+            foreach (Control control in Controls)
+            {
+                control.Enabled = true;
+            }
+
+            //for listViewProducts
+            editToolStripMenuItem.Enabled = false;
+            deleteToolStripMenuItem.Enabled = false;
+            //for listViewOrders
+            editToolStripMenuItem1.Enabled = false;
+            deleteToolStripMenuItem1.Enabled = false;
+            //for listViewDelivery
+            editToolStripMenuItem2.Enabled = false;
+            deleteToolStripMenuItem2.Enabled = false;
+        }
+
+        private void loginToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form login = new FormLogin();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                enableControls();
             }
         }
     }
