@@ -62,6 +62,8 @@
             this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateForProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,8 +103,9 @@
             this.pictureBoxColor = new System.Windows.Forms.PictureBox();
             this.textBoxDrop = new System.Windows.Forms.TextBox();
             this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.chartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generateForProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
@@ -373,23 +376,38 @@
             // 
             this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
             this.addToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.addToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(170, 26);
             this.addToolStripMenuItem2.Text = "Add";
             this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
             // editToolStripMenuItem2
             // 
             this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
-            this.editToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(170, 26);
             this.editToolStripMenuItem2.Text = "Edit";
             this.editToolStripMenuItem2.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
             // 
             // deleteToolStripMenuItem2
             // 
             this.deleteToolStripMenuItem2.Name = "deleteToolStripMenuItem2";
-            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(170, 26);
             this.deleteToolStripMenuItem2.Text = "Delete";
             this.deleteToolStripMenuItem2.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
+            // 
+            // chartToolStripMenuItem
+            // 
+            this.chartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generateForProductsToolStripMenuItem});
+            this.chartToolStripMenuItem.Name = "chartToolStripMenuItem";
+            this.chartToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.chartToolStripMenuItem.Text = "Chart";
+            // 
+            // generateForProductsToolStripMenuItem
+            // 
+            this.generateForProductsToolStripMenuItem.Name = "generateForProductsToolStripMenuItem";
+            this.generateForProductsToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.generateForProductsToolStripMenuItem.Text = "Generate for products";
+            this.generateForProductsToolStripMenuItem.Click += new System.EventHandler(this.generateForProductsToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -611,27 +629,36 @@
             // labelProducts
             // 
             this.labelProducts.AutoSize = true;
+            this.labelProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.labelProducts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProducts.Location = new System.Drawing.Point(696, 69);
             this.labelProducts.Name = "labelProducts";
-            this.labelProducts.Size = new System.Drawing.Size(60, 16);
+            this.labelProducts.Size = new System.Drawing.Size(70, 18);
             this.labelProducts.TabIndex = 5;
             this.labelProducts.Text = "Products";
             // 
             // labelOrders
             // 
             this.labelOrders.AutoSize = true;
+            this.labelOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.labelOrders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrders.Location = new System.Drawing.Point(12, 69);
             this.labelOrders.Name = "labelOrders";
-            this.labelOrders.Size = new System.Drawing.Size(48, 16);
+            this.labelOrders.Size = new System.Drawing.Size(56, 18);
             this.labelOrders.TabIndex = 6;
             this.labelOrders.Text = "Orders";
             // 
             // labelDelivery
             // 
             this.labelDelivery.AutoSize = true;
+            this.labelDelivery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.labelDelivery.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDelivery.Location = new System.Drawing.Point(12, 378);
             this.labelDelivery.Name = "labelDelivery";
-            this.labelDelivery.Size = new System.Drawing.Size(57, 16);
+            this.labelDelivery.Size = new System.Drawing.Size(67, 18);
             this.labelDelivery.TabIndex = 7;
             this.labelDelivery.Text = "Delivery";
             // 
@@ -672,6 +699,7 @@
             // pictureBoxColor
             // 
             this.pictureBoxColor.BackColor = System.Drawing.Color.White;
+            this.pictureBoxColor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxColor.Location = new System.Drawing.Point(1205, 88);
             this.pictureBoxColor.Name = "pictureBoxColor";
             this.pictureBoxColor.Size = new System.Drawing.Size(128, 103);
@@ -697,20 +725,29 @@
             this.contextMenuStrip4.Name = "contextMenuStrip4";
             this.contextMenuStrip4.Size = new System.Drawing.Size(61, 4);
             // 
-            // chartToolStripMenuItem
+            // panel1
             // 
-            this.chartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generateForProductsToolStripMenuItem});
-            this.chartToolStripMenuItem.Name = "chartToolStripMenuItem";
-            this.chartToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.chartToolStripMenuItem.Text = "Chart";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel1.Location = new System.Drawing.Point(630, 89);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 234);
+            this.panel1.TabIndex = 12;
             // 
-            // generateForProductsToolStripMenuItem
+            // panel2
             // 
-            this.generateForProductsToolStripMenuItem.Name = "generateForProductsToolStripMenuItem";
-            this.generateForProductsToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
-            this.generateForProductsToolStripMenuItem.Text = "Generate for products";
-            this.generateForProductsToolStripMenuItem.Click += new System.EventHandler(this.generateForProductsToolStripMenuItem_Click);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel2.Location = new System.Drawing.Point(630, 398);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 234);
+            this.panel2.TabIndex = 13;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(1090, 89);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 542);
+            this.panel3.TabIndex = 14;
             // 
             // FormFlowerShop
             // 
@@ -718,6 +755,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxDrop);
             this.Controls.Add(this.pictureBoxColor);
             this.Controls.Add(this.statusStripProducts);
@@ -824,6 +864,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
         private System.Windows.Forms.ToolStripMenuItem chartToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateForProductsToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
