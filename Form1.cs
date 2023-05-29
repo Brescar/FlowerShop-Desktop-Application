@@ -10,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -697,6 +698,29 @@ namespace FlowerShop
                     pictureBoxColor.BackColor = Color.White;
                 }
             }
+
+        }
+
+        private void FormFlowerShop_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void generateForProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChart graphForm = new FormChart();
+
+            foreach (ListViewItem item in listViewProducts.Items)
+            {
+                string productName = item.SubItems[0].Text;
+                double price = Convert.ToDouble(item.SubItems[2].Text);
+                int stock = Convert.ToInt32(item.SubItems[3].Text);
+
+                double totalValue = price * stock;
+                graphForm.AddDataPoint(productName, totalValue);
+            }
+
+            graphForm.Show();
 
         }
     }

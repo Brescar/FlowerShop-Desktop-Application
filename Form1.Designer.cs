@@ -101,6 +101,8 @@
             this.pictureBoxColor = new System.Windows.Forms.PictureBox();
             this.textBoxDrop = new System.Windows.Forms.TextBox();
             this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.chartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateForProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
@@ -117,7 +119,8 @@
             this.fileToolStripMenuItem,
             this.productsToolStripMenuItem,
             this.ordersToolStripMenuItem,
-            this.deliveryToolStripMenuItem});
+            this.deliveryToolStripMenuItem,
+            this.chartToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 28);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1902, 28);
@@ -370,21 +373,21 @@
             // 
             this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
             this.addToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.addToolStripMenuItem2.Size = new System.Drawing.Size(170, 26);
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.addToolStripMenuItem2.Text = "Add";
             this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
             // editToolStripMenuItem2
             // 
             this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
-            this.editToolStripMenuItem2.Size = new System.Drawing.Size(170, 26);
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.editToolStripMenuItem2.Text = "Edit";
             this.editToolStripMenuItem2.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
             // 
             // deleteToolStripMenuItem2
             // 
             this.deleteToolStripMenuItem2.Name = "deleteToolStripMenuItem2";
-            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(170, 26);
+            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.deleteToolStripMenuItem2.Text = "Delete";
             this.deleteToolStripMenuItem2.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
@@ -694,6 +697,21 @@
             this.contextMenuStrip4.Name = "contextMenuStrip4";
             this.contextMenuStrip4.Size = new System.Drawing.Size(61, 4);
             // 
+            // chartToolStripMenuItem
+            // 
+            this.chartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generateForProductsToolStripMenuItem});
+            this.chartToolStripMenuItem.Name = "chartToolStripMenuItem";
+            this.chartToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.chartToolStripMenuItem.Text = "Chart";
+            // 
+            // generateForProductsToolStripMenuItem
+            // 
+            this.generateForProductsToolStripMenuItem.Name = "generateForProductsToolStripMenuItem";
+            this.generateForProductsToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.generateForProductsToolStripMenuItem.Text = "Generate for products";
+            this.generateForProductsToolStripMenuItem.Click += new System.EventHandler(this.generateForProductsToolStripMenuItem_Click);
+            // 
             // FormFlowerShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -714,6 +732,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormFlowerShop";
             this.Text = "FlowerShop";
+            this.Load += new System.EventHandler(this.FormFlowerShop_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -803,6 +822,8 @@
         private System.Windows.Forms.PictureBox pictureBoxColor;
         private System.Windows.Forms.TextBox textBoxDrop;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
+        private System.Windows.Forms.ToolStripMenuItem chartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateForProductsToolStripMenuItem;
     }
 }
 
