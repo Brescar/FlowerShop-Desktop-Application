@@ -98,12 +98,16 @@
             this.toolStripStatusLabelTextProducts = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxColor = new System.Windows.Forms.PictureBox();
+            this.textBoxDrop = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.statusStripProducts.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColor)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -432,6 +436,7 @@
             this.listViewProducts.UseCompatibleStateImageBehavior = false;
             this.listViewProducts.View = System.Windows.Forms.View.Details;
             this.listViewProducts.SelectedIndexChanged += new System.EventHandler(this.listViewProducts_SelectedIndexChanged);
+            this.listViewProducts.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listViewProducts_MouseDown);
             // 
             // columnHeaderFlowerName
             // 
@@ -661,12 +666,42 @@
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click_1);
             // 
+            // pictureBoxColor
+            // 
+            this.pictureBoxColor.BackColor = System.Drawing.Color.White;
+            this.pictureBoxColor.Location = new System.Drawing.Point(1205, 88);
+            this.pictureBoxColor.Name = "pictureBoxColor";
+            this.pictureBoxColor.Size = new System.Drawing.Size(128, 103);
+            this.pictureBoxColor.TabIndex = 10;
+            this.pictureBoxColor.TabStop = false;
+            // 
+            // textBoxDrop
+            // 
+            this.textBoxDrop.AllowDrop = true;
+            this.textBoxDrop.Location = new System.Drawing.Point(1205, 210);
+            this.textBoxDrop.Name = "textBoxDrop";
+            this.textBoxDrop.ReadOnly = true;
+            this.textBoxDrop.Size = new System.Drawing.Size(128, 22);
+            this.textBoxDrop.TabIndex = 11;
+            this.textBoxDrop.Text = "White";
+            this.textBoxDrop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxDrop.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxDrop_DragDrop);
+            this.textBoxDrop.DragEnter += new System.Windows.Forms.DragEventHandler(this.textBoxDrop_DragEnter);
+            // 
+            // contextMenuStrip4
+            // 
+            this.contextMenuStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip4.Name = "contextMenuStrip4";
+            this.contextMenuStrip4.Size = new System.Drawing.Size(61, 4);
+            // 
             // FormFlowerShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.textBoxDrop);
+            this.Controls.Add(this.pictureBoxColor);
             this.Controls.Add(this.statusStripProducts);
             this.Controls.Add(this.labelDelivery);
             this.Controls.Add(this.labelOrders);
@@ -688,6 +723,7 @@
             this.statusStripProducts.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxColor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -764,6 +800,9 @@
         private System.Windows.Forms.ToolStripMenuItem deliveryToolStripMenuItem2;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBoxColor;
+        private System.Windows.Forms.TextBox textBoxDrop;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
     }
 }
 

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FlowerShop
 {
@@ -652,6 +653,51 @@ namespace FlowerShop
             {
                 enableControls();
             }
+        }
+
+        private void listViewProducts_MouseDown(object sender, MouseEventArgs e)
+        {
+            System.Windows.Forms.ListView lv = sender as System.Windows.Forms.ListView;
+
+            if (lv.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lv.SelectedItems[0];
+                string color = selectedItem.SubItems[1].Text;
+                lv.DoDragDrop(color, DragDropEffects.Copy);
+            }
+        }
+
+        private void textBoxDrop_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.StringFormat))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void textBoxDrop_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.StringFormat))
+            {
+                string color = (string)e.Data.GetData(DataFormats.StringFormat);
+                textBoxDrop.Text = color;
+
+                string colorName = color;
+                if (Enum.TryParse(colorName, out KnownColor knownColor))
+                {
+                    Color colorValue = Color.FromKnownColor(knownColor);
+                    pictureBoxColor.BackColor = colorValue;
+                }
+                else
+                {
+                    pictureBoxColor.BackColor = Color.White;
+                }
+            }
+
         }
     }
 }
