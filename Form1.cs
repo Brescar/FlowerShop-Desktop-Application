@@ -30,6 +30,12 @@ namespace FlowerShop
             }
 
             menuStrip2.Enabled = true;
+
+            enableControls(); //comment this line or delete it in order to run the application as intended
+                              //this line was added so if someone wants to try the application
+                              //they do not have to worry about adding a database and tables
+                              //in order for the login to properly work and call enableControls()
+                              //when credentials are validated
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
