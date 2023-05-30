@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDelivery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Delivery>
+    <DeliveryDate>2023-05-03T19:04:36</DeliveryDate>
+    <Value>100</Value>
+    <Recipient>Andrew Jackson</Recipient>
+    <Details>21 roses for wedding</Details>
+  </Delivery>
+</ArrayOfDelivery>
