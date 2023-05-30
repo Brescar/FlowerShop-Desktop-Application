@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <OrderDate>2023-05-17T19:03:21</OrderDate>
+    <Value>1000</Value>
+    <Sender>FL SRL</Sender>
+    <Details>100 roses 100 moses 100 noses 100 shoses</Details>
+  </Order>
+</ArrayOfOrder>

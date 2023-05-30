@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfFlower xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Flower>
+    <Name>Rose</Name>
+    <Color>red</Color>
+    <Price>5</Price>
+    <Quantity>37</Quantity>
+  </Flower>
+  <Flower>
+    <Name>Dandelion</Name>
+    <Color>Yellow</Color>
+    <Price>1</Price>
+    <Quantity>100</Quantity>
+  </Flower>
+</ArrayOfFlower>
