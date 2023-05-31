@@ -17,7 +17,7 @@ This is an application that manages a shop that sells flowers. It manages produc
 * The order and delivery class are standalone, they are not connected to the Flower class (which is the entry for listViewProducts). Ideally, order and delivery should have had a list of the chosen products. 
 
 ## Notes
-### In order to run the application in the intended way, you will need to either :
+### In order to run the application in the intended way, you will need to :
 * Create a database called 'DB-FlowerShop' in the sql server called (localdb)\MSSQLLocalDB with a table called 'Accounts' that contains as columns/attributes 'Username' and 'Password' ( varchar(50) ). Populate the table with at least 1 entry.  
 _and_
 * In Form1.cs, comment/delete the last line in `FormFlowerShop()` constructor the line `enableControls();`, so you need to login succesfully with credentials from the database in order to have access to the application.
