@@ -11,7 +11,7 @@ This is an application that manages a shop that sells flowers. It manages produc
 * Some shortcuts.
 
 ## Problems / small bugs :  
-* When logging in, double left click is required. Why? Probably the way I implemented the method of enabling the controls after loggging in correctly, because the workaround I found was through DialogResult.
+* When logging in, double left click is required. Why? Probably the way I implemented the method of enabling the controls after logging in correctly, because the workaround I found was through DialogResult.
 * Printing document in the Chart menu doesn't fit the graph adequatly to the page.
 * Drag and Drop requires first that the product is selected, then the actual drag needs to be initiated only from the column with Color of the selected product. After dropping a kind of selection tries to take place in the listView.
 * The order and delivery class are standalone, they are not connected to the Flower class (which is the entry for listViewProducts). Ideally, order and delivery should have had a list of the chosen products. 
