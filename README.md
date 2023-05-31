@@ -2,7 +2,7 @@
 This is an application that manages a shop that sells flowers. It manages products, orders to be received that consist of products and deliveries to be sent to customers. It was made for learning purposes. Limited functionality, but still viable while not very optimal.
 
 ## List of functionalities in the order that an user might meet them : 
-* Login menu at the start of the application, which connextion to a database that stores the viable credentials.
+* Login menu at the start of the application, with connection to a database that stores the viable credentials.
 * MenuStrip and ContextMenuStrip for 3 listViews that allow add, edit and delete though a second form. Validation is made for all of them.
 * Supported 'Saving as' and 'Open' as binary files and XML for all 3 listViews.
 * Drag and Drop control that allows for a selected product to drag the color into a textBox, and as long as the color has a name that can be found in the .NET Framework, the color appears in the above pictureBox.
